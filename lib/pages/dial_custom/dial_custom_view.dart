@@ -11,8 +11,8 @@ class DialCustomView extends GetView<DialCustomLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.quigley.value
-              ? const CircularProgressIndicator(color: Colors.blue)
+          () => controller.veum.value
+              ? const CircularProgressIndicator(color: Colors.white)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class DialCustomView extends GetView<DialCustomLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.pufzcvwe();
+              controller.hydq();
             },
             icon: const Icon(
               Icons.restart_alt,

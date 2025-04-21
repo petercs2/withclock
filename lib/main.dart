@@ -1,5 +1,8 @@
 import 'package:dial_clock/pages/check_con/check_con_binding.dart';
+import 'package:dial_clock/pages/check_con/check_con_live.dart';
 import 'package:dial_clock/pages/check_con/check_con_view.dart';
+import 'package:dial_clock/pages/dial_custom/dial_custom_binding.dart';
+import 'package:dial_clock/pages/dial_custom/dial_custom_view.dart';
 import 'package:dial_clock/pages/dial_main/dial_main_binding.dart';
 import 'package:dial_clock/pages/dial_main/dial_main_view.dart';
 import 'package:dial_clock/pages/dial_setting/dial_setting_binding.dart';
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Deeps,
-      initialRoute: '/dial_main',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -86,7 +89,9 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Deeps = [
+  GetPage(name: '/', page: () => const DialCustomView(), binding: DialCustomBinding()),
   GetPage(name: '/dial_main', page: () => const DialMainPage(), binding: DialMainBinding()),
-  GetPage(name: '/dial_setting', page: () => DialSettingPage(), binding: DialSettingBinding()),
-  GetPage(name: '/dial_check', page: () => CheckConView(), binding: CheckConBinding()),
+  GetPage(name: '/dial_live', page: () => const CheckConLive()),
+  GetPage(name: '/dial_setting', page: () => const DialSettingPage(), binding: DialSettingBinding()),
+  GetPage(name: '/dial_check', page: () => const CheckConView(), binding: CheckConBinding()),
 ];
