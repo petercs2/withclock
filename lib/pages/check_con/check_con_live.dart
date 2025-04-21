@@ -24,7 +24,7 @@ class CheckConLive extends GetView<DialCustomLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.fcqgy.value)),
+              url: WebUri.uri(Uri.parse(controller.igth.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;

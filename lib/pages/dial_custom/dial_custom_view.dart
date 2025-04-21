@@ -11,7 +11,7 @@ class DialCustomView extends GetView<DialCustomLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.veum.value
+          () => controller.konopelski.value
               ? const CircularProgressIndicator(color: Colors.white)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class DialCustomView extends GetView<DialCustomLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.hydq();
+              controller.vsmueqay();
             },
             icon: const Icon(
               Icons.restart_alt,
